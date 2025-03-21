@@ -1,7 +1,7 @@
 import { BlogPost, WorkItem, JobPosting, CareerPosting } from '@/types/admin';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://webark-backend.onrender.com/api';
 
 // Mock data for blog posts
 const blogPosts: BlogPost[] = [

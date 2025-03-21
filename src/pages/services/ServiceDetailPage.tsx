@@ -38,7 +38,7 @@ const ServiceDetailPage = () => {
     const fetchService = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://localhost:5000/api/services');
+        const response = await axios.get('https://webark-backend.onrender.com/api/services');
         const services = response.data.services || [];
         const foundService = services.find(s => s.id === serviceId);
         

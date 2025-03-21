@@ -50,8 +50,8 @@ const DashboardPage: React.FC = () => {
   const fetchData = async () => {
     try {
       const [servicesResponse, teamResponse] = await Promise.all([
-        axios.get<{ services: Service[] }>('http://localhost:5000/api/services'),
-        axios.get<{ team: TeamMember[] }>('http://localhost:5000/api/team')
+        axios.get<{ services: Service[] }>('https://webark-backend.onrender.com/api/services'),
+        axios.get<{ team: TeamMember[] }>('https://webark-backend.onrender.com/api/team')
       ]);
       console.log('Services response:', servicesResponse.data); // Debugging
       console.log('Team response:', teamResponse.data); // Debugging
@@ -84,7 +84,7 @@ const DashboardPage: React.FC = () => {
   // CRUD Operations
   const addService = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/services', newService);
+      const response = await axios.post('https://webark-backend.onrender.com/api/services', newService);
       toast({
         title: "Success",
         description: "Service added successfully!",
@@ -102,7 +102,7 @@ const DashboardPage: React.FC = () => {
 
   const editService = async (id: string, updatedService: Service) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/services/${id}`, updatedService);
+      const response = await axios.put(`https://webark-backend.onrender.com/api/services/${id}`, updatedService);
       toast({
         title: "Success",
         description: "Service updated successfully!",
@@ -121,7 +121,7 @@ const DashboardPage: React.FC = () => {
 
   const addMember = async () => {
     try {
-      await axios.post('http://localhost:5000/api/team', newMember);
+      await axios.post('https://webark-backend.onrender.com/api/team', newMember);
       toast({
         title: "Success",
         description: "Team member added successfully!",
@@ -139,7 +139,7 @@ const DashboardPage: React.FC = () => {
 
   const deleteService = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/services/${id}`);
+      await axios.delete(`https://webark-backend.onrender.com/api/services/${id}`);
       toast({
         title: "Success",
         description: "Service deleted successfully!",
@@ -156,7 +156,7 @@ const DashboardPage: React.FC = () => {
 
   const deleteMember = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/team/${id}`);
+      await axios.delete(`https://webark-backend.onrender.com/api/team/${id}`);
       toast({
         title: "Success",
         description: "Team member deleted successfully!",
